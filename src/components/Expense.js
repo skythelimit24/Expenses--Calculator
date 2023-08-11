@@ -1,7 +1,7 @@
 import ExpenseItem from './ExpenseItem';
 import './Expense.css'
 import Card from './Card';
-    function Expense() {
+    function Expense(props) {
         const expenses=[
           {
             id: 'e1',
