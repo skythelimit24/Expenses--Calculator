@@ -1,6 +1,6 @@
 import Expense from './components/Expense' ;
 import React from 'react';
-function App(){
+let App=()=>{
   return(
 
 <>
