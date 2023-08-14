@@ -4,6 +4,7 @@ import './ExpenseItem.css'
 import Card from './Card';
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title)
+  console.log("expense item is needed to be calculated")
   
   let ClickHandler =()=>{
     setTitle('item is updated');
