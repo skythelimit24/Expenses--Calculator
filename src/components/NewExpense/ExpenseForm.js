@@ -33,22 +33,33 @@ let dateChangeHandler =(event)=>{
 //         enteredDate:event.target.value,
 //         ...userInput
 // })
- }
+}
+const inputChangeHandler=(identifier,value)=>{
+    if (identifier === 'title'){
+        setEnteredTitle(value)
+    }
+    else if(identifier ==='Date'){
+        setEnteredDate(value)
+    }
+    else{
+        setEnteredAmount(value)
+    }
+}
 return(
 <div>
 <form>
     <div className="new-expense__controls">
         <div className="new-expense__control">
             <label>Title</label> 
-            <input type = "text" onChange={titleChangeHandler}/>
+            <input type = "text" onChange={(event)=>{inputChangeHandler('title',event.target.value)}}/>
         </div>
         <div className="new-expense__control">
             <label>Amount</label> 
-            <input type = "number" min=".01" step='.01' onChange={amountChangeHandler}/>
+            <input type = "number" min=".01" step='.01' onChange={(event)=>{inputChangeHandler('amount',event.target.value)}}/>
         </div>
         <div className="new-expense__control">
             <label>Date</label> 
-            <input type = "Date" min="1-1-2022" step='1-1-2023' onChange={dateChangeHandler}/>
+            <input type = "Date" min="1-1-1947" step='1-1-1947' onChange={(event)=>{inputChangeHandler('date',event.target.value)}}/>
         </div>
     </div>
 </form>
