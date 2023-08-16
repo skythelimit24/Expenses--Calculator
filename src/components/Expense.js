@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import "./Expense.css";
 import Card from "./Card";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesChart from './ExpensesChart'
 import NewExpense from "./NewExpense/NewExpense";
+import ExpensesList from "./ExpensesList";
 let Dummy_Expenses = [
   {
     id: "e1",
@@ -52,20 +53,6 @@ let Expense = () => {
   const FilteredExpenses = expenses.filter((replicate) => {
     return replicate.date.getFullYear().toString() === filteredYear;
   });
-  let expensesContent = <h3>No Expenses Found ! </h3>;
-  if (FilteredExpenses.length > 0) {
-    expensesContent = FilteredExpenses.map((expense) => {
-      return (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      );
-    });
-  }
-
   return (
     <>
       <NewExpense onAddExpense={addExpenseHandler} />
@@ -74,7 +61,8 @@ let Expense = () => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {expensesContent}
+        <ExpensesChart expenses={FilteredExpenses}/>
+        <ExpensesList items={FilteredExpenses}/>
       </Card>
     </>
   );
