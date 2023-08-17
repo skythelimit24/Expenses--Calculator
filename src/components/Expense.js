@@ -9,31 +9,31 @@ let Dummy_Expenses = [
   {
     id: "e1",
     title: "Toilet Paper",
-    amount: "43 Rs",
+    amount: "43",
     date: new Date(),
   },
   {
     id: "e2",
     title: "GiftItem",
-    amount: "232 Rs",
+    amount: "232",
     date: new Date(),
   },
   {
     id: "e3",
     title: "Toy",
-    amount: "1200 Rs",
+    amount: "1200",
     date: new Date(),
   },
   {
     id: "e4",
     title: "MobilePhone",
-    amount: "15000 Rs",
+    amount: "15000",
     date: new Date(),
   },
   {
     id: "e5",
     title: "Health Drink",
-    amount: "850 Rs",
+    amount: "850",
     date: new Date(),
   },
 ];
